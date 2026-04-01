@@ -13,7 +13,7 @@ public class Dailyask {
 
     public static final RegistryObject<Item> QUESTION_BOOK =
             ITEMS.register("question_book", () -> new Item(new Item.Properties()));
-
+// du mistsack hoffe dein code wird den hals sich brechen
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
