@@ -9,7 +9,7 @@ import net.minecraft.world.item.enchantment.Enchantment.Rarity;
 
 public class MagnetEnchant extends Enchantment {
     public MagnetEnchant(){
-        super(Rarity.RARE, EnchantmentCategory.WEAPON,
+        super(Rarity.COMMON, EnchantmentCategory.WEAPON,
                 new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
