@@ -1,14 +1,16 @@
 package com.example.examplemod;
 
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
-import net.minecraft.world.item.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.enchantment.Enchantment.Rarity;
 
 public class MagnetEnchant extends Enchantment {
     public MagnetEnchant(){
-        super(Rarity.RARE, EnchantmentCatergory.WEAPON,
-                new EquipmentSlot[]{EquitmenSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentCategory.WEAPON,
+                new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
     @Override
@@ -20,7 +22,7 @@ public class MagnetEnchant extends Enchantment {
     public void doPostAttack(LivingEntity attacker,
                              net.minecraft.world.entity.Entity target,
                              int level) {
-        if (!attacker.level.isClientSide) {
+        if (!attacker.level().isClientSide) {
             // Ziel wird zu dir gezogen
             double dx = attacker.getX() - target.getX();
             double dy = attacker.getY() - target.getY();

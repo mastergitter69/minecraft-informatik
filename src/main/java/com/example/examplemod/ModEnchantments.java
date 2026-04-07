@@ -11,7 +11,7 @@ public class ModEnchantments {
             DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, "examplemod");
 
     public static final RegistryObject<Enchantment> MAGNET =
-            ENCHANTMENTS.register("magnet", MagnetEnchantment::new);
+            ENCHANTMENTS.register("magnet", MagnetEnchant::new);
 
 }
 
