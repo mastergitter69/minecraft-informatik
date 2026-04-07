@@ -4,8 +4,10 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -54,8 +56,12 @@ public class Dailyask {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS)
-            event.accept(QUESTION_BOOK.get());
+        if (event.getTabKey() == CreativeModeTabs.COMBAT) {  // oder TOOLS
+            ItemStack book = new ItemStack(QUESTION_BOOK.get());
+            EnchantedBookItem.addEnchantment(book,
+                    new EnchantmentInstance(DAILY_QUESTION.get(), 1));
+            event.accept(book);
+        }
     }
 }
 
