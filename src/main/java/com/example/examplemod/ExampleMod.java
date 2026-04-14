@@ -110,7 +110,7 @@ public class ExampleMod
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
             ItemStack book = new ItemStack(net.minecraft.world.item.Items.ENCHANTED_BOOK);
             net.minecraft.world.item.enchantment.EnchantmentHelper.setEnchantments(
-                    new java.util.Map.of(ModEnchantments.MAGNET.get(), 3), book
+                    java.util.Map.of(ModEnchantments.MAGNET.get(), 3), book
             );
             event.accept(book);
         }
