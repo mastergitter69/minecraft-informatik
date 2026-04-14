@@ -28,6 +28,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 import com.example.examplemod.ModEnchantments;
+import net.minecraft.world.item.ItemStack;
+
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ExampleMod.MODID)
@@ -104,6 +106,15 @@ public class ExampleMod
     {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
             event.accept(EXAMPLE_BLOCK_ITEM);
+
+        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+            ItemStack book = new ItemStack(net.minecraft.world.item.Items.ENCHANTED_BOOK);
+            net.minecraft.world.item.enchantment.EnchantmentHelper.setEnchantments(
+                    new java.util.Map.of(ModEnchantments.MAGNET.get(), 3), book
+            );
+            event.accept(book);
+        }
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
