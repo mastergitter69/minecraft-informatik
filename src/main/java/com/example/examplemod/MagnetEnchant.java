@@ -29,7 +29,7 @@ public class MagnetEnchant extends Enchantment {
             double dz = attacker.getZ() - target.getZ();
 
             // Je höher das Level desto stärker der Zug
-            double strength = 0.5 *level;
+            double strength = 0.4 *level;
 
             target.setDeltaMovement(dx * strength,
                     dy * strength,
