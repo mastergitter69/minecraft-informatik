@@ -54,7 +54,7 @@ public class ModEvents {
 
         player.sendSystemMessage(Component.literal(""));
         player.sendSystemMessage(Component.literal("§6§l╔══════════════════════════╗"));
-        player.sendSystemMessage(Component.literal("§6§l║        §eDailyAsk           §6§l║"));
+        player.sendSystemMessage(Component.literal("§6§l║        §eDailyAsk        ║  §6§l"));
         player.sendSystemMessage(Component.literal("§6§l╚══════════════════════════╝"));
         player.sendSystemMessage(Component.literal("§e❓ §f" + question.question()));
         player.sendSystemMessage(Component.literal("§7Antworte im Chat! §c(Falsche Antwort = Schaden)"));
