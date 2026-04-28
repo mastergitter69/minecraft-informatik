@@ -19,8 +19,8 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = Dailyask.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModEvents {
 
-    // Schaden bei falscher Antwort (in Halben Herzen, 4 = 2 Herzen)
-    private static final float WRONG_ANSWER_DAMAGE = 4.0f;
+    // Schaden bei falscher Antwort (in Halben Herzen, 16 = 8 Herzen)
+    private static final float WRONG_ANSWER_DAMAGE = 16.0f;
 
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
@@ -54,7 +54,7 @@ public class ModEvents {
 
         player.sendSystemMessage(Component.literal(""));
         player.sendSystemMessage(Component.literal("§6§l╔══════════════════════════╗"));
-        player.sendSystemMessage(Component.literal("§6§l║        §eDailyAsk        ║  §6§l"));
+        player.sendSystemMessage(Component.literal("§6§l║        §eDailyAsk          §6§l║"));
         player.sendSystemMessage(Component.literal("§6§l╚══════════════════════════╝"));
         player.sendSystemMessage(Component.literal("§e❓ §f" + question.question()));
         player.sendSystemMessage(Component.literal("§7Antworte im Chat! §c(Falsche Antwort = Schaden)"));
@@ -91,7 +91,7 @@ public class ModEvents {
                     WRONG_ANSWER_DAMAGE
             );
             player.sendSystemMessage(Component.literal(
-                    "§c Du hast §l" + (int)(WRONG_ANSWER_DAMAGE / 2) + " Herzen §r§c Schaden erhalten!"
+                    "§c Du hast §l" + (int)(WRONG_ANSWER_DAMAGE / 9) + " Herzen §r§c Schaden erhalten!"
             ));
         }
     }
