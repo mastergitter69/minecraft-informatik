@@ -7,7 +7,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 // Magnet Enchant: Zieht Getroffene Mobs oder Spieler nach einem Treffer zum Spieler hin. und mann kann es auf fast alles packen (enchanten)
 public class MagnetEnchant extends Enchantment {
     public MagnetEnchant(){
-        super(Rarity.COMMON, EnchantmentCategory.WEAPON,
+        super(Rarity.COMMON, EnchantmentCategory.VANISHABLE,
                 new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 // Enchant wird als COMMON eingestuft und kann nur auf Waffen in der Haupthand verwendet werden.
