@@ -4,7 +4,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
-// Magnet Enchant: Zieht Getroffene Mobs oder Spieler nach einem Treffer zum Spieler hin. und mann kann es auf fast alles packen (enchanten)
+// Magnet Enchant: Zieht Getroffene Mobs oder Spieler nach einem Treffer zum Spieler hin.
 public class MagnetEnchant extends Enchantment {
     public MagnetEnchant(){
         super(Rarity.COMMON, EnchantmentCategory.VANISHABLE,
