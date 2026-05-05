@@ -1,4 +1,4 @@
-package com.example.examplemod.events;
+package com.example.examplemod.event;
 
 import com.example.examplemod.Dailyask;
 import com.example.examplemod.data.DailyAskData;
@@ -54,7 +54,7 @@ public class ModEvents {
 
         player.sendSystemMessage(Component.literal(""));
         player.sendSystemMessage(Component.literal("§6§l╔══════════════════════════╗"));
-        player.sendSystemMessage(Component.literal("§6§l║        §eDailyAsk          §6§l║"));
+        player.sendSystemMessage(Component.literal("§6§l║        §eDailyAsk                                             §6§l║"));
         player.sendSystemMessage(Component.literal("§6§l╚══════════════════════════╝"));
         player.sendSystemMessage(Component.literal("§e❓ §f" + question.question()));
         player.sendSystemMessage(Component.literal("§7Antworte im Chat! §c(Falsche Antwort = Schaden)"));
