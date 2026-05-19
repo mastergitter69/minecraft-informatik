@@ -1,7 +1,9 @@
 package com.example.examplemod.question;
 
 import java.util.List;
-
+import com.example.examplemod.data.DailyAskData;
+import java.util.stream.Collectors;
+import java.util.ArrayList;
 public class QuestionManager {
 
     public record Question(String question, String answer) {}
@@ -69,18 +71,29 @@ public class QuestionManager {
             new Question("Wie viele Biome gibt es in der aktuellen Java-Version?", "61")
     );
 
-    /**
-     * Gibt die Frage für den aktuellen Minecraft-Tag zurück.
-     * dayIndex kommt aus WorldSavedData (Ingame-Tage).
-     */
-    public static Question getQuestion(long dayIndex) {
-        int index = (int)(dayIndex % QUESTIONS.size());
-        return QUESTIONS.get(index);
+    // Gibt eine zufällige Frage zurück die noch nicht gestellt wurde
+    public static Question getQuestion(DailyAskData data) {
+        List<Question> remaining = QUESTIONS.stream()
+                .filter(q -> !data.wasAsked(q.question()))
+                .collect(Collectors.toList());
+
+        // Falls alle Fragen durch sind, Register zurücksetzen
+        if (remaining.isEmpty()) {
+            data.clearAskedQuestions();
+            remaining = new ArrayList<>(QUESTIONS);
+        }
+
+        // Zufällige Frage wählen
+        int index = (int)(Math.random() * remaining.size());
+        Question chosen = remaining.get(index);
+
+        // Als gestellt markieren
+        data.addAskedQuestion(chosen.question());
+
+        return chosen;
     }
 
-    /**
-     * Prüft ob die Antwort korrekt ist (case-insensitive, trimmed).
-     */
+    // Prüft ob die Antwort korrekt ist (case-insensitive, trimmed)
     public static boolean isCorrect(Question question, String playerAnswer) {
         return question.answer().trim().equalsIgnoreCase(playerAnswer.trim());
     }
