@@ -1,3 +1,4 @@
+
 package com.example.examplemod;
 
 import net.minecraft.world.entity.EquipmentSlot;
@@ -15,7 +16,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.minecraft.world.item.ArmorItem;
 
 // Registriert den Mod bei Forge mit der angegebenen MODID
 @Mod(Dailyask.MODID)
@@ -54,8 +54,6 @@ public class Dailyask {
                 public boolean canApplyAtEnchantingTable(ItemStack stack) {
                     return stack.canApplyAtEnchantingTable(this);
                 }
-
-
             });
 
     // Konstruktor: Registriert alle Register und den Creative-Tab-Listener am Mod-Eventbus
@@ -76,3 +74,4 @@ public class Dailyask {
         }
     }
 }
+
