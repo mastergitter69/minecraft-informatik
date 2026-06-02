@@ -41,9 +41,12 @@ public class ModEvents {
         ServerLevel level = player.serverLevel();
         DailyAskData data = DailyAskData.get(level);
 
-        long currentDay = level.getDayTime() / 24000L;
+        long currentDay = level.getGameTime() / 24000L;
 
-        if (data.getLastAskedDay(player.getUUID()) == currentDay) return;
+        long currentDay1 = currentDay;
+        if (data.getLastAskedDay(player.getUUID())(currentDay)) {
+            ;
+        }
         if (data.isWaiting(player.getUUID())) return;
 
         data.setLastAskedDay(player.getUUID(), currentDay);
