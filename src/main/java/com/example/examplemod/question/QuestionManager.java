@@ -31,13 +31,13 @@ public class QuestionManager {
             new Question("In welcher Y-Ebene spawnt Diamant am häufigsten?", "-58"),
             new Question("Wie weit muss ein Nether-Portal vom nächsten entfernt sein, damit es ein eigenes Portal spawnt?", "128"),
             new Question("Wie viele Blöcke entspricht 1 Block im Nether in der Oberwelt?", "8"),
-            new Question("Wie viele Blaze Rods braucht man, um zum Enderdrachen zu gelangen?", "1"),
+            new Question("Wie viele Blaze Rods braucht man, um zum Enderdrachen zu gelangen?", "6"),
             new Question("Wie viel HP hat der Wither?", "300"),
             new Question("Wie viele Enderpearls droppt ein Enderman durchschnittlich?", "1"),
             new Question("Wie hoch ist der Nether von Bedrock zu Bedrock?", "128"),
 
             // Crafting-Outputs
-            new Question("Wie viele Fackeln bekommt man aus einem Stack Kohle?", "64"),
+            new Question("Wie viele Fackeln bekommt man aus einem Stack Kohle?", "256"),
             new Question("Wie viele Glasscheiben bekommt man aus einem Crafting mit 6 Glasblöcken?", "16"),
             new Question("Wie viele Knochenmehl bekommt man aus einem Knochen?", "3"),
             new Question("Wie viele Brote kann man aus einem Stack Weizen backen?", "21"),
@@ -55,7 +55,7 @@ public class QuestionManager {
             new Question("Wie weit überträgt ein Redstone-Signal ohne Verstärker?", "15"),
             new Question("Wie viele Ticks hat eine Redstone-Verzögerung auf Stufe 1?", "2"),
             new Question("Wie viele Redstone-Staub braucht man für einen Komparator?", "3"),
-            new Question("Wie viele Pistons kann ein einzelner Redstone-Block aktivieren?", "1"),
+            new Question("Wie viele Pistons kann ein einzelner Redstone-Block aktivieren?", "6"),
 
             // Mobs & Strukturen
             new Question("Wie viel HP hat ein Creeper?", "20"),
@@ -63,7 +63,7 @@ public class QuestionManager {
             new Question("Wie viele Herzen regeneriert man mit einem goldenen Apfel?", "2"),
             new Question("Wie viel HP hat ein Eisengolem?", "100"),
             new Question("Wie viele Strongholds gibt es pro Welt?", "128"),
-            new Question("Wie weit vom Spawn entfernt spawnen Strongholds ca.?", "1408"),
+            new Question("Wie weit vom Spawn entfernt spawnen Strongholds .?", "1408"),
             new Question("Wie viele End-Portale gibt es pro Stronghold?", "1"),
             new Question("Wie tief ist Bedrock-Level in der Oberwelt?", "-64"),
             new Question("Wie viele Biome gibt es in der aktuellen Java-Version?", "61")
