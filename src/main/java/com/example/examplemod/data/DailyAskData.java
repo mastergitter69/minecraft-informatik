@@ -34,6 +34,27 @@ public class DailyAskData extends SavedData {
     // 🟢 NEU: eigene Tages-Sperre nur für HELM-System
     private final Map<UUID, Long> lastHelmetAsk = new HashMap<>();
 
+    // 🔴 NEU: speichert die aktuell aktive Frage pro Spieler
+    private final Map<UUID, String> activeQuestion = new HashMap<>();
+
+    // -------------------------------------------------------
+    // 🔴 AKTIVE FRAGE PRO SPIELER
+    // -------------------------------------------------------
+
+    public String getActiveQuestion(UUID uuid) {
+        return activeQuestion.getOrDefault(uuid, null);
+    }
+
+    public void setActiveQuestion(UUID uuid, String question) {
+        activeQuestion.put(uuid, question);
+        setDirty();
+    }
+
+    public void clearActiveQuestion(UUID uuid) {
+        activeQuestion.remove(uuid);
+        setDirty();
+    }
+
     // -------------------------------------------------------
     // GETTER / SETTER (bestehendes System)
     // -------------------------------------------------------
@@ -59,6 +80,10 @@ public class DailyAskData extends SavedData {
     public void addAskedQuestion(String question) {
         askedQuestions.add(question);
         setDirty();
+    }
+
+    public boolean wasAsked(String question) {
+        return askedQuestions.contains(question);
     }
 
     public void clearAskedQuestions() {
@@ -102,6 +127,10 @@ public class DailyAskData extends SavedData {
         askedQuestions.forEach(q -> questionsTag.add(StringTag.valueOf(q)));
         tag.put("askedQuestions", questionsTag);
 
+        CompoundTag activeTag = new CompoundTag();
+        activeQuestion.forEach((uuid, q) -> activeTag.putString(uuid.toString(), q));
+        tag.put("activeQuestion", activeTag);
+
         return tag;
     }
 
@@ -127,6 +156,12 @@ public class DailyAskData extends SavedData {
         ListTag questionsTag = tag.getList("askedQuestions", 8);
         for (int i = 0; i < questionsTag.size(); i++) {
             data.askedQuestions.add(questionsTag.getString(i));
+        }
+
+        // activeQuestion laden
+        CompoundTag activeTag = tag.getCompound("activeQuestion");
+        for (String key : activeTag.getAllKeys()) {
+            data.activeQuestion.put(UUID.fromString(key), activeTag.getString(key));
         }
 
         return data;
