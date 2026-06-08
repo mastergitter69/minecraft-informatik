@@ -59,7 +59,6 @@ public class DailyAskCommands {
                                     }
 
                                     DailyAskData data = DailyAskData.get(level);
-
                                     if (QuestionManager.isCorrect(q, msg)) {
                                         player.sendSystemMessage(Component.literal("§aRichtig!"));
                                         data.setWaiting(uuid, false);
@@ -70,4 +69,7 @@ public class DailyAskCommands {
                                     }
 
                                     return 1;
-                                }
+                                }))  // ← added ))
+        );
+    }
+}
