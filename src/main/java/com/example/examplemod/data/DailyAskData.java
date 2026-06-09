@@ -56,7 +56,7 @@ public class DailyAskData extends SavedData {
     }
 
     // -------------------------------------------------------
-    // GETTER / SETTER (bestehendes System)
+    // GETTER / SETTER
     // -------------------------------------------------------
 
     public long getLastAskedDay(UUID uuid) {
