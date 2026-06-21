@@ -35,6 +35,7 @@ public class MagnetEnchant extends Enchantment {
         }
     }
 }
+
 /**
  * Wird nach jedem Angriff ausgeführt
  * Berechnet die Richtung vom Ziel zum Angreifer und zieht das Ziel heran
