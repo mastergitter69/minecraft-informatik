@@ -34,6 +34,7 @@ import net.minecraft.world.item.ItemStack;
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ExampleMod.MODID)
 public class ExampleMod
+// Meine Hauptklasse. Die ID muss mit der in der mods.toml übereinstimmen.
 {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "examplemod";
@@ -45,6 +46,7 @@ public class ExampleMod
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "examplemod" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
+// Hier bereite ich die Registrierungen für meine Blöcke, Items und Tabs vor.
 
     // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
     public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
@@ -67,7 +69,7 @@ public class ExampleMod
         IEventBus modEventBus = context.getModEventBus();
 
         ModEnchantments.ENCHANTMENTS.register(modEventBus);
-
+// Hier registriere ich meine eigene Verzauberung (wie das Magnet-Enchantment) beim Start der Mod.
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -109,6 +111,7 @@ public class ExampleMod
 
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
             ItemStack book = new ItemStack(net.minecraft.world.item.Items.ENCHANTED_BOOK);
+            // Hier packe ich ein Buch mit meinem Magnet-Enchantment (Stufe 3) direkt in den normalen Kampf-Tab.
             net.minecraft.world.item.enchantment.EnchantmentHelper.setEnchantments(
                     java.util.Map.of(ModEnchantments.MAGNET.get(), 3), book
             );

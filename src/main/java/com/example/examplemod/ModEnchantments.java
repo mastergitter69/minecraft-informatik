@@ -4,14 +4,15 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-//Registiert alle Enchantments der Mod
+// Hier registriere ich alle eigenen Verzauberungen meiner Mod.
 public class ModEnchantments {
 
+    // Dieses DeferredRegister sammelt meine Enchantments und lädt sie später sicher ins Spiel.
     public static final DeferredRegister<Enchantment> ENCHANTMENTS =
             DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, "examplemod");
-//DefferedRegister speichert alle Enchantments und registiert sie später beim Laden der Mod
+
+    // Hier füge ich mein Magnet-Enchantment unter dem internen Namen "magnet" zur Liste hinzu.
     public static final RegistryObject<Enchantment> MAGNET =
             ENCHANTMENTS.register("magnet", MagnetEnchant::new);
-//Registiert das Magnet Enchant unter dem namen magnet
 }
 
